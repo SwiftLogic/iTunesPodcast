@@ -12,6 +12,7 @@ class MainTabBarVC: UITabBarController {
     // MARK: View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        UINavigationBar.appearance().prefersLargeTitles = true
         setUpTabBarRootViewControllers()
     }
     
@@ -21,18 +22,15 @@ class MainTabBarVC: UITabBarController {
         tabBar.tintColor = .purple
         /// Favs
         let favController = UIViewController()
-        favController.navigationItem.title = "FAVORITES"
         let favoritesNavController = createNavController(for: favController, title: "Favorites", systemImage: "play.circle.fill")
         
         /// Search
-        let searchController = UIViewController()
-        searchController.navigationItem.title = "SEARCH"
+        let searchController = PodcastSearchVC()
         let searchNavController = createNavController(for: searchController, title: "Search", systemImage: "magnifyingglass")
         
         
         /// Downloads
         let downloadsController = UIViewController()
-        downloadsController.navigationItem.title = "DOWNLOADS"
         let downloadsNavController = createNavController(for: downloadsController, title: "Downloads", systemImage: "square.stack.fill")
         
         viewControllers = [favoritesNavController, searchNavController, downloadsNavController]
@@ -47,6 +45,7 @@ class MainTabBarVC: UITabBarController {
         let navController = UINavigationController(rootViewController: viewController)
         navController.tabBarItem.image = UIImage(systemName: systemImage)
         navController.tabBarItem.title = title
+        viewController.navigationItem.title = title
         return navController
     }
 }

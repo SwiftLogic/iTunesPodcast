@@ -11,6 +11,8 @@
 		E940DF2F2A2D4F0700CC56C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E940DF2E2A2D4F0700CC56C3 /* Assets.xcassets */; };
 		E940DF322A2D4F0700CC56C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E940DF302A2D4F0700CC56C3 /* LaunchScreen.storyboard */; };
 		E940DF3C2A2D50A500CC56C3 /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E940DF3B2A2D50A500CC56C3 /* MainTabBarVC.swift */; };
+		E940DF422A2D543B00CC56C3 /* PodcastSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E940DF412A2D543B00CC56C3 /* PodcastSearchVC.swift */; };
+		E940DF442A2D55B800CC56C3 /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = E940DF432A2D55B800CC56C3 /* Podcast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		E940DF312A2D4F0700CC56C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E940DF332A2D4F0700CC56C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E940DF3B2A2D50A500CC56C3 /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
+		E940DF412A2D543B00CC56C3 /* PodcastSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastSearchVC.swift; sourceTree = "<group>"; };
+		E940DF432A2D55B800CC56C3 /* Podcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 		E940DF392A2D508B00CC56C3 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				E940DF3D2A2D53E100CC56C3 /* Search */,
 				E940DF3A2A2D509100CC56C3 /* MainTabBar */,
 			);
 			path = Core;
@@ -75,6 +80,39 @@
 				E940DF3B2A2D50A500CC56C3 /* MainTabBarVC.swift */,
 			);
 			path = MainTabBar;
+			sourceTree = "<group>";
+		};
+		E940DF3D2A2D53E100CC56C3 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				E940DF402A2D540E00CC56C3 /* Model */,
+				E940DF3F2A2D540500CC56C3 /* Views */,
+				E940DF3E2A2D53FC00CC56C3 /* Controllers */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		E940DF3E2A2D53FC00CC56C3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E940DF412A2D543B00CC56C3 /* PodcastSearchVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E940DF3F2A2D540500CC56C3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E940DF402A2D540E00CC56C3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E940DF432A2D55B800CC56C3 /* Podcast.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +186,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E940DF262A2D4F0500CC56C3 /* AppDelegate.swift in Sources */,
+				E940DF422A2D543B00CC56C3 /* PodcastSearchVC.swift in Sources */,
+				E940DF442A2D55B800CC56C3 /* Podcast.swift in Sources */,
 				E940DF3C2A2D50A500CC56C3 /* MainTabBarVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
