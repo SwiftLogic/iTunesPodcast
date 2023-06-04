@@ -14,10 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
-        let viewController = UIViewController()
-        viewController.view.backgroundColor = .red
-        window?.rootViewController = viewController
+        window?.rootViewController = MainTabBarVC()
         return true
     }
 }
-
