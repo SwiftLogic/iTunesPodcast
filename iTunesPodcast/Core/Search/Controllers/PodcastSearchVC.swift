@@ -17,7 +17,13 @@ class PodcastSearchVC: UIViewController {
     
     
     // MARK: - Properties
-    private let cellIdentifier = "PodcastSearchVC-Cell"
+    private(set) var podcasts: [Podcast] = [
+        Podcast(name: "Joe Rogan Experience", artistName: "Joe Rogan"),
+        Podcast(name: "Harness fear to drive innovation", artistName: "Masters of Scale"),
+        Podcast(name: "The Student's Guide to becoming a successful business owner...", artistName: "Y Combinator")
+    ]
+    
+    static let cellIdentifier = "PodcastSearchVC-Cell"
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.delegate = self
@@ -37,21 +43,8 @@ class PodcastSearchVC: UIViewController {
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: Self.cellIdentifier)
     }
 
 }
 
-
-// MARK: - TableView Delegate & Datasource
-extension PodcastSearchVC: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 12
-    }
-}
