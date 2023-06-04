@@ -12,7 +12,8 @@ class PodcastSearchVC: UIViewController {
     // MARK: - View's LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpViews()
+        setUpSearchController()
+        setUpTableView()
     }
     
     
@@ -22,6 +23,8 @@ class PodcastSearchVC: UIViewController {
         Podcast(name: "Harness fear to drive innovation", artistName: "Masters of Scale"),
         Podcast(name: "The Student's Guide to becoming a successful business owner...", artistName: "Y Combinator")
     ]
+    
+    private let searchController = UISearchController(searchResultsController: nil)
     
     static let cellIdentifier = "PodcastSearchVC-Cell"
     private lazy var tableView: UITableView = {
@@ -34,7 +37,7 @@ class PodcastSearchVC: UIViewController {
 
     
     // MARK: - Methods
-    private func setUpViews() {
+    private func setUpTableView() {
         view.backgroundColor = .white
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
@@ -46,5 +49,19 @@ class PodcastSearchVC: UIViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: Self.cellIdentifier)
     }
 
+    
+    private func setUpSearchController() {
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.searchBar.delegate = self
+    }
 }
 
+
+// MARK: - UISearchBarDelegate
+extension PodcastSearchVC: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print("searchText: \(searchText)")
+    }
+}
