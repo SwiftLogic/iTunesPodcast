@@ -16,7 +16,7 @@ extension PodcastSearchVC: UITableViewDelegate, UITableViewDataSource {
         let podcast = podcasts[indexPath.row]
         content.image = UIImage(named: "audioWaves")
         content.imageProperties.maximumSize = .init(width: 80, height: 80)
-        content.text = podcast.name
+        content.text = podcast.trackName
         content.secondaryText = podcast.artistName
         cell.contentConfiguration = content
         return cell

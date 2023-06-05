@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class PodcastSearchVC: UIViewController {
     
@@ -15,16 +14,11 @@ class PodcastSearchVC: UIViewController {
         super.viewDidLoad()
         setUpSearchController()
         setUpTableView()
-        makeAPIRequest()
     }
     
     
     // MARK: - Properties
-    private(set) var podcasts: [Podcast] = [
-        Podcast(name: "Joe Rogan Experience", artistName: "Joe Rogan"),
-        Podcast(name: "Harness fear to drive innovation", artistName: "Masters of Scale"),
-        Podcast(name: "The Student's Guide to becoming a successful business owner...", artistName: "Y Combinator")
-    ]
+    private(set) var podcasts = [Podcast]()
     
     private let searchController = UISearchController(searchResultsController: nil)
     
@@ -60,9 +54,11 @@ class PodcastSearchVC: UIViewController {
     
     
     // MARK: - Networking
-    private func makeAPIRequest() {
-        Task {
-            try await SearchNetworkingManager.shared.makeAPIRequest()
+    private func searchForPodcast(_ podcast: String) {
+        Task { [weak self] in
+            let podcasts = try await SearchNetworkingManager.shared.makeAPIRequest(for: podcast)
+            self?.podcasts = podcasts
+            self?.tableView.reloadData()
         }
     }
 }
@@ -72,6 +68,6 @@ class PodcastSearchVC: UIViewController {
 extension PodcastSearchVC: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("searchText: \(searchText)")
+        searchForPodcast(searchText)
     }
 }

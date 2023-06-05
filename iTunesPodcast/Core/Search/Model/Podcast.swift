@@ -7,7 +7,19 @@
 
 import Foundation
 
-struct Podcast {
-    let name: String
-    let artistName: String
+struct Podcast: Decodable {
+    var trackName: String?
+    var artistName: String?
+}
+
+
+
+struct PodcastSearchResult: Decodable {
+    let resultCount: Int
+    let podcasts: [Podcast]
+    
+    enum CodingKeys: String, CodingKey {
+        case resultCount
+        case podcasts = "results"
+    }
 }
