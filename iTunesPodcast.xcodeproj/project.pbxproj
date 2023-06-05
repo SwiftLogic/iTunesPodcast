@@ -14,7 +14,7 @@
 		E940DF422A2D543B00CC56C3 /* PodcastSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E940DF412A2D543B00CC56C3 /* PodcastSearchVC.swift */; };
 		E940DF442A2D55B800CC56C3 /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = E940DF432A2D55B800CC56C3 /* Podcast.swift */; };
 		E940DF462A2D56BB00CC56C3 /* PodcastSearchVC+TableViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E940DF452A2D56BB00CC56C3 /* PodcastSearchVC+TableViewDelegates.swift */; };
-		E940DF4C2A2D660900CC56C3 /* SearchNetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E940DF4B2A2D660900CC56C3 /* SearchNetworkingManager.swift */; };
+		E940DF4C2A2D660900CC56C3 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E940DF4B2A2D660900CC56C3 /* APIService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		E940DF412A2D543B00CC56C3 /* PodcastSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastSearchVC.swift; sourceTree = "<group>"; };
 		E940DF432A2D55B800CC56C3 /* Podcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
 		E940DF452A2D56BB00CC56C3 /* PodcastSearchVC+TableViewDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PodcastSearchVC+TableViewDelegates.swift"; sourceTree = "<group>"; };
-		E940DF4B2A2D660900CC56C3 /* SearchNetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNetworkingManager.swift; sourceTree = "<group>"; };
+		E940DF4B2A2D660900CC56C3 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +124,7 @@
 		E940DF4A2A2D65F400CC56C3 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				E940DF4B2A2D660900CC56C3 /* SearchNetworkingManager.swift */,
+				E940DF4B2A2D660900CC56C3 /* APIService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -208,7 +208,7 @@
 				E940DF462A2D56BB00CC56C3 /* PodcastSearchVC+TableViewDelegates.swift in Sources */,
 				E940DF442A2D55B800CC56C3 /* Podcast.swift in Sources */,
 				E940DF3C2A2D50A500CC56C3 /* MainTabBarVC.swift in Sources */,
-				E940DF4C2A2D660900CC56C3 /* SearchNetworkingManager.swift in Sources */,
+				E940DF4C2A2D660900CC56C3 /* APIService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

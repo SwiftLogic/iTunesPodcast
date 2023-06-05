@@ -54,9 +54,9 @@ class PodcastSearchVC: UIViewController {
     
     
     // MARK: - Networking
-    private func searchForPodcast(_ podcast: String) {
+    private func searchForPodcast(_ searchText: String) {
         Task { [weak self] in
-            let podcasts = try await SearchNetworkingManager.shared.makeAPIRequest(for: podcast)
+            let podcasts = try await APIService.shared.fetchPodcasts(using: searchText)
             self?.podcasts = podcasts
             self?.tableView.reloadData()
         }

@@ -7,16 +7,17 @@
 
 import Foundation
 
-class SearchNetworkingManager {
+class APIService {
     
-    static let shared = SearchNetworkingManager()
+    static let shared = APIService()
     private let decoder = JSONDecoder()
+    private let baseURL = "https://itunes.apple.com/search?term="
     private init() {}
     
     @MainActor
-    func makeAPIRequest(for searchText: String) async throws -> [Podcast] {
-        var allowed = CharacterSet.alphanumerics
-        guard let url = URL(string: "https://itunes.apple.com/search?term=\(searchText.URLEncoded)") else {
+    func fetchPodcasts(using searchText: String) async throws -> [Podcast] {
+        let urlString = baseURL + searchText.URLEncoded
+        guard let url = URL(string: urlString) else {
             throw SearchNetworkingError.invalidURL
         }
         let request = URLRequest(url: url)
