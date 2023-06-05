@@ -14,6 +14,7 @@
 		E940DF422A2D543B00CC56C3 /* PodcastSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E940DF412A2D543B00CC56C3 /* PodcastSearchVC.swift */; };
 		E940DF442A2D55B800CC56C3 /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = E940DF432A2D55B800CC56C3 /* Podcast.swift */; };
 		E940DF462A2D56BB00CC56C3 /* PodcastSearchVC+TableViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E940DF452A2D56BB00CC56C3 /* PodcastSearchVC+TableViewDelegates.swift */; };
+		E940DF4C2A2D660900CC56C3 /* SearchNetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E940DF4B2A2D660900CC56C3 /* SearchNetworkingManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		E940DF412A2D543B00CC56C3 /* PodcastSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastSearchVC.swift; sourceTree = "<group>"; };
 		E940DF432A2D55B800CC56C3 /* Podcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
 		E940DF452A2D56BB00CC56C3 /* PodcastSearchVC+TableViewDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PodcastSearchVC+TableViewDelegates.swift"; sourceTree = "<group>"; };
+		E940DF4B2A2D660900CC56C3 /* SearchNetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNetworkingManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		E940DF3D2A2D53E100CC56C3 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				E940DF4A2A2D65F400CC56C3 /* Service */,
 				E940DF402A2D540E00CC56C3 /* Model */,
 				E940DF3F2A2D540500CC56C3 /* Views */,
 				E940DF3E2A2D53FC00CC56C3 /* Controllers */,
@@ -118,6 +121,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		E940DF4A2A2D65F400CC56C3 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E940DF4B2A2D660900CC56C3 /* SearchNetworkingManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,6 +145,8 @@
 			dependencies = (
 			);
 			name = iTunesPodcast;
+			packageProductDependencies = (
+			);
 			productName = iTunesPodcast;
 			productReference = E940DF222A2D4F0500CC56C3 /* iTunesPodcast.app */;
 			productType = "com.apple.product-type.application";
@@ -162,6 +175,8 @@
 				Base,
 			);
 			mainGroup = E940DF192A2D4F0500CC56C3;
+			packageReferences = (
+			);
 			productRefGroup = E940DF232A2D4F0500CC56C3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -193,6 +208,7 @@
 				E940DF462A2D56BB00CC56C3 /* PodcastSearchVC+TableViewDelegates.swift in Sources */,
 				E940DF442A2D55B800CC56C3 /* Podcast.swift in Sources */,
 				E940DF3C2A2D50A500CC56C3 /* MainTabBarVC.swift in Sources */,
+				E940DF4C2A2D660900CC56C3 /* SearchNetworkingManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

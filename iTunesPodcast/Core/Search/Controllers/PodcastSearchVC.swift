@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class PodcastSearchVC: UIViewController {
     
@@ -14,6 +15,7 @@ class PodcastSearchVC: UIViewController {
         super.viewDidLoad()
         setUpSearchController()
         setUpTableView()
+        makeAPIRequest()
     }
     
     
@@ -54,6 +56,14 @@ class PodcastSearchVC: UIViewController {
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
         searchController.searchBar.delegate = self
+    }
+    
+    
+    // MARK: - Networking
+    private func makeAPIRequest() {
+        Task {
+            try await SearchNetworkingManager.shared.makeAPIRequest()
+        }
     }
 }
 
