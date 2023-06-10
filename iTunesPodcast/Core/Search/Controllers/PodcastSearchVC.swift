@@ -18,7 +18,11 @@ class PodcastSearchVC: UIViewController {
     
     
     // MARK: - Properties
-    private(set) var podcasts = [Podcast]()
+    private(set) var podcasts = [
+        Podcast(trackName: "Joe Rogan Experience", artistName: "Joe Rogan"),
+        Podcast(trackName: "Harness fear to drive innovation", artistName: "Masters of Scale"),
+        Podcast(trackName: "The Student's Guide to becoming a successful business owner...", artistName: "Y Combinator")
+    ]
     
     private let searchController = UISearchController(searchResultsController: nil)
     
@@ -28,6 +32,7 @@ class PodcastSearchVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.keyboardDismissMode = .interactive
         return tableView
     }()
 
@@ -42,7 +47,7 @@ class PodcastSearchVC: UIViewController {
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: Self.cellIdentifier)
+        tableView.register(PodcastCell.self, forCellReuseIdentifier: Self.cellIdentifier)
     }
 
     
