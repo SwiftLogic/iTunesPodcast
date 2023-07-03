@@ -48,6 +48,8 @@ class PodcastSearchVC: UIViewController {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
         tableView.register(PodcastCell.self, forCellReuseIdentifier: Self.cellIdentifier)
+        
+        tableView.tableFooterView = UIView()
     }
 
     

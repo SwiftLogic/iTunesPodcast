@@ -41,7 +41,7 @@ class PodcastCell: UITableViewCell {
         addSubview(        podcastNameLabel)
         addSubview(detailsLabel)
         
-        coverImageView.anchorToEdges(top: topAnchor, leading: leadingAnchor, padding: .init(top: 5, left: 12, bottom: 0, right: 0), size: .init(width: 100, height: 100))
+        coverImageView.anchorToEdges(top: topAnchor, leading: leadingAnchor, padding: .init(top: 5, left: 20, bottom: 0, right: 0), size: .init(width: 100, height: 100))
         
         podcastNameLabel.anchorToEdges(leading: coverImageView.trailingAnchor, trailing: trailingAnchor, padding: .init(top: 0, left: 12, bottom: 0, right: 12))
         
