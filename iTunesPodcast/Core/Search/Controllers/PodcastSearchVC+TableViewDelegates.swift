@@ -39,5 +39,10 @@ extension PodcastSearchVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return podcasts.isEmpty ? 250 : 0
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let episodesController = EpisodesController(podcast: podcasts[indexPath.row])
+        navigationController?.pushViewController(episodesController, animated: true)
+    }
 }
 

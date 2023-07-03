@@ -17,6 +17,7 @@
 		E940DF4C2A2D660900CC56C3 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E940DF4B2A2D660900CC56C3 /* APIService.swift */; };
 		E955F4432A52FA1500540949 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = E955F4422A52FA1500540949 /* SDWebImage */; };
 		E955F4462A52FCB900540949 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955F4452A52FCB900540949 /* UIView.swift */; };
+		E955F4482A5302F400540949 /* EpisodesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955F4472A5302F400540949 /* EpisodesController.swift */; };
 		E99B84862A33FFC6007A0363 /* PodcastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99B84852A33FFC6007A0363 /* PodcastCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		E940DF452A2D56BB00CC56C3 /* PodcastSearchVC+TableViewDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PodcastSearchVC+TableViewDelegates.swift"; sourceTree = "<group>"; };
 		E940DF4B2A2D660900CC56C3 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		E955F4452A52FCB900540949 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		E955F4472A5302F400540949 /* EpisodesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesController.swift; sourceTree = "<group>"; };
 		E99B84852A33FFC6007A0363 /* PodcastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +111,7 @@
 			children = (
 				E940DF412A2D543B00CC56C3 /* PodcastSearchVC.swift */,
 				E940DF452A2D56BB00CC56C3 /* PodcastSearchVC+TableViewDelegates.swift */,
+				E955F4472A5302F400540949 /* EpisodesController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				E940DF3C2A2D50A500CC56C3 /* MainTabBarVC.swift in Sources */,
 				E940DF4C2A2D660900CC56C3 /* APIService.swift in Sources */,
 				E99B84862A33FFC6007A0363 /* PodcastCell.swift in Sources */,
+				E955F4482A5302F400540949 /* EpisodesController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
