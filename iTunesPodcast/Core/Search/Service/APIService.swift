@@ -28,7 +28,7 @@ class APIService {
         
         do {
             let searchResult = try decoder.decode(PodcastSearchResult.self, from: data)
-            print("searchResult \(searchResult.podcasts)")
+            //            print("searchResult \(searchResult.podcasts)")
             return searchResult.podcasts
         } catch let error {
             print("decoderError: \(error.localizedDescription)")
@@ -37,7 +37,7 @@ class APIService {
     }
 }
 
-private enum SearchNetworkingError: Error {
+enum SearchNetworkingError: Error {
     case invalidURL
     case invalidResponse
     case invalidSearchData
