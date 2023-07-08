@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FeedKit
 
 class EpisodesController: UIViewController {
     
@@ -23,11 +24,13 @@ class EpisodesController: UIViewController {
         view.backgroundColor = .white
         setUpNavItems()
         setUpTableView()
+        fetchEpisodes()
     }
     
     // MARK: - Properties
     private let podcast: Podcast
     static let cellId = "EpisodesCellId"
+    private var episodes = [Episode]()
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -49,6 +52,40 @@ class EpisodesController: UIViewController {
     private func setUpNavItems() {
         navigationItem.title = podcast.trackName ?? ""
     }
+    
+    
+    private func fetchEpisodes() {
+        
+        guard let feedUrlString = podcast.feedUrl,
+              let url = URL(string: feedUrlString.contains("https") ? feedUrlString : feedUrlString.replacingOccurrences(of: "http", with: "https")) else {return}
+        
+        
+        let parser = FeedParser(URL: url)
+        var episodes = [Episode]()
+
+        parser.parseAsync {[weak self] result in
+            switch result {
+            case .success(let success):
+                success.rssFeed?.items?.forEach({ feedItem in
+                    let episode = Episode(title: feedItem.title ?? "")
+                    episodes.append(episode)
+                })
+
+                DispatchQueue.main.async {
+                    self?.episodes = episodes
+                    self?.tableView.reloadData()
+                    print("episodes \(episodes.count)")
+                }
+            case .failure(let failure):
+                print("failed to parse XML")
+            }
+        }
+        
+    }
+}
+
+struct Episode: Decodable {
+    let title: String
 }
 
 
@@ -65,6 +102,6 @@ extension EpisodesController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return episodes.count
     }
 }

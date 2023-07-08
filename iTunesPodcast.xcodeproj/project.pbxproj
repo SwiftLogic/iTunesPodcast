@@ -19,6 +19,7 @@
 		E955F4462A52FCB900540949 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955F4452A52FCB900540949 /* UIView.swift */; };
 		E955F4482A5302F400540949 /* EpisodesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955F4472A5302F400540949 /* EpisodesController.swift */; };
 		E99B84862A33FFC6007A0363 /* PodcastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99B84852A33FFC6007A0363 /* PodcastCell.swift */; };
+		E9EFE1DF2A59228700CC0766 /* FeedKit in Frameworks */ = {isa = PBXBuildFile; productRef = E9EFE1DE2A59228700CC0766 /* FeedKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E955F4432A52FA1500540949 /* SDWebImage in Frameworks */,
+				E9EFE1DF2A59228700CC0766 /* FeedKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +168,7 @@
 			name = iTunesPodcast;
 			packageProductDependencies = (
 				E955F4422A52FA1500540949 /* SDWebImage */,
+				E9EFE1DE2A59228700CC0766 /* FeedKit */,
 			);
 			productName = iTunesPodcast;
 			productReference = E940DF222A2D4F0500CC56C3 /* iTunesPodcast.app */;
@@ -197,6 +200,7 @@
 			mainGroup = E940DF192A2D4F0500CC56C3;
 			packageReferences = (
 				E955F4412A52FA1500540949 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				E9EFE1DD2A59228600CC0766 /* XCRemoteSwiftPackageReference "FeedKit" */,
 			);
 			productRefGroup = E940DF232A2D4F0500CC56C3 /* Products */;
 			projectDirPath = "";
@@ -456,6 +460,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		E9EFE1DD2A59228600CC0766 /* XCRemoteSwiftPackageReference "FeedKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nmdias/FeedKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -463,6 +475,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E955F4412A52FA1500540949 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
+		};
+		E9EFE1DE2A59228700CC0766 /* FeedKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E9EFE1DD2A59228600CC0766 /* XCRemoteSwiftPackageReference "FeedKit" */;
+			productName = FeedKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
