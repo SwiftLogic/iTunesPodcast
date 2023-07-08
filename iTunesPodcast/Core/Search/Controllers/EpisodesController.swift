@@ -68,7 +68,13 @@ class EpisodesController: UIViewController {
                 
             case .success(let success):
                 success.rssFeed?.items?.forEach({ feedItem in
-                    let episode = Episode(feedItem: feedItem)
+                    var episode = Episode(feedItem: feedItem)
+                    
+                    // if the episode has no imageUrl, use the podcastImageUrl
+                    if episode.imageUrl == nil {
+                        let podcastImageUrl = success.rssFeed?.iTunes?.iTunesImage?.attributes?.href
+                        episode.imageUrl = podcastImageUrl
+                    }
                     episodes.append(episode)
                 })
 

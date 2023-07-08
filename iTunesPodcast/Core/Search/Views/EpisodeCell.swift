@@ -44,10 +44,8 @@ class EpisodeCell: UITableViewCell {
         
         coverImageView.anchorToEdges(top: topAnchor, leading: leadingAnchor, padding: .init(top: 5, left: 20, bottom: 0, right: 0), size: .init(width: 100, height: 100))
         
-        pubDateLabel.anchorToEdges(leading: coverImageView.trailingAnchor, trailing: trailingAnchor, padding: .init(top: 0, left: 12, bottom: 0, right: 12))
-        
-        pubDateLabel.centerYAnchor.constraint(equalTo: coverImageView.centerYAnchor, constant: -30).isActive = true
-        
+        pubDateLabel.anchorToEdges(top: topAnchor, leading: coverImageView.trailingAnchor, trailing: trailingAnchor, padding: .init(top: 5, left: 12, bottom: 0, right: 12))
+                
         titleLabel.anchorToEdges(top: pubDateLabel.bottomAnchor, leading: pubDateLabel.leadingAnchor, trailing: pubDateLabel.trailingAnchor, padding: .init(top: 2, left: 0, bottom: 0, right: 0))
 
         descriptionLabel.anchorToEdges(top: titleLabel.bottomAnchor, leading: pubDateLabel.leadingAnchor, trailing: pubDateLabel.trailingAnchor, padding: .init(top: 2, left: 0, bottom: 0, right: 0))
@@ -55,7 +53,7 @@ class EpisodeCell: UITableViewCell {
     
     
     func bindCell(to episode: Episode) {
-        setUpImage(for: "podcastplaceholder")
+        setUpImage(for: episode.imageUrl)
         titleLabel.text = episode.title
         descriptionLabel.text = episode.description
 
