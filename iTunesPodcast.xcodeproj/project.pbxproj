@@ -20,6 +20,8 @@
 		E955F4482A5302F400540949 /* EpisodesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E955F4472A5302F400540949 /* EpisodesController.swift */; };
 		E99B84862A33FFC6007A0363 /* PodcastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99B84852A33FFC6007A0363 /* PodcastCell.swift */; };
 		E9EFE1DF2A59228700CC0766 /* FeedKit in Frameworks */ = {isa = PBXBuildFile; productRef = E9EFE1DE2A59228700CC0766 /* FeedKit */; };
+		E9EFE1E12A5A146200CC0766 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EFE1E02A5A146200CC0766 /* Episode.swift */; };
+		E9EFE1E32A5A14C900CC0766 /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EFE1E22A5A14C900CC0766 /* EpisodeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		E955F4452A52FCB900540949 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		E955F4472A5302F400540949 /* EpisodesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesController.swift; sourceTree = "<group>"; };
 		E99B84852A33FFC6007A0363 /* PodcastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastCell.swift; sourceTree = "<group>"; };
+		E9EFE1E02A5A146200CC0766 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		E9EFE1E22A5A14C900CC0766 /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				E99B84852A33FFC6007A0363 /* PodcastCell.swift */,
+				E9EFE1E22A5A14C900CC0766 /* EpisodeCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -130,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				E940DF432A2D55B800CC56C3 /* Podcast.swift */,
+				E9EFE1E02A5A146200CC0766 /* Episode.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -231,6 +237,8 @@
 				E955F4462A52FCB900540949 /* UIView.swift in Sources */,
 				E940DF262A2D4F0500CC56C3 /* AppDelegate.swift in Sources */,
 				E940DF422A2D543B00CC56C3 /* PodcastSearchVC.swift in Sources */,
+				E9EFE1E32A5A14C900CC0766 /* EpisodeCell.swift in Sources */,
+				E9EFE1E12A5A146200CC0766 /* Episode.swift in Sources */,
 				E940DF462A2D56BB00CC56C3 /* PodcastSearchVC+TableViewDelegates.swift in Sources */,
 				E940DF442A2D55B800CC56C3 /* Podcast.swift in Sources */,
 				E940DF3C2A2D50A500CC56C3 /* MainTabBarVC.swift in Sources */,

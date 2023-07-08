@@ -29,7 +29,6 @@ class EpisodesController: UIViewController {
     
     // MARK: - Properties
     private let podcast: Podcast
-    static let cellId = "EpisodesCellId"
     private var episodes = [Episode]()
     
     private lazy var tableView: UITableView = {
@@ -46,7 +45,7 @@ class EpisodesController: UIViewController {
     private func setUpTableView() {
         view.addSubview(tableView)
         tableView.fillSuperview()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: Self.cellId)
+        tableView.register(EpisodeCell.self, forCellReuseIdentifier: EpisodeCell.cellIdentifier)
     }
     
     private func setUpNavItems() {
@@ -57,17 +56,19 @@ class EpisodesController: UIViewController {
     private func fetchEpisodes() {
         
         guard let feedUrlString = podcast.feedUrl,
-              let url = URL(string: feedUrlString.contains("https") ? feedUrlString : feedUrlString.replacingOccurrences(of: "http", with: "https")) else {return}
-        
+              let url = URL(string: feedUrlString.contains("https") ? feedUrlString :
+                                feedUrlString.replacingOccurrences(of: "http", with: "https"))
+        else {return}
         
         let parser = FeedParser(URL: url)
         var episodes = [Episode]()
 
         parser.parseAsync {[weak self] result in
             switch result {
+                
             case .success(let success):
                 success.rssFeed?.items?.forEach({ feedItem in
-                    let episode = Episode(title: feedItem.title ?? "")
+                    let episode = Episode(feedItem: feedItem)
                     episodes.append(episode)
                 })
 
@@ -77,23 +78,17 @@ class EpisodesController: UIViewController {
                     print("episodes \(episodes.count)")
                 }
             case .failure(let failure):
-                print("failed to parse XML")
+                print("failed to parse XML \(failure.localizedDescription)")
             }
         }
-        
     }
 }
-
-struct Episode: Decodable {
-    let title: String
-}
-
 
 extension EpisodesController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Self.cellId, for: indexPath)
-        cell.backgroundColor = .red
+        let cell = tableView.dequeueReusableCell(withIdentifier: EpisodeCell.cellIdentifier, for: indexPath) as! EpisodeCell
+        cell.bindCell(to: episodes[indexPath.row])
         return cell
     }
     

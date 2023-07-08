@@ -55,9 +55,33 @@ extension UIView {
                       trailing: superview?.trailingAnchor,
                       padding: padding)
     }
-    
 }
 
 struct AnchoredConstraints {
     var top, leading, bottom, trailing, width, height: NSLayoutConstraint?
+}
+
+func createLabel(_ title: String, font: UIFont, textColor: UIColor, numOfLines: Int = 0) -> UILabel {
+    let label = UILabel()
+    label.text = title
+    label.font = font
+    label.textColor = textColor
+    label.translatesAutoresizingMaskIntoConstraints = false
+    label.numberOfLines = numOfLines
+    return label
+}
+
+func handleSetUpAttributedText(titleString: String, subString: String, mainColor: UIColor, mainfont: UIFont, secondColor: UIColor, subFont: UIFont) -> NSMutableAttributedString {
+    
+    let mainAttributes = [NSAttributedString.Key.foregroundColor : mainColor, NSAttributedString.Key.font : mainfont]
+    let mainAttributedText = NSMutableAttributedString(string: titleString, attributes: mainAttributes)
+    
+    let subAttributes = [NSAttributedString.Key.foregroundColor : secondColor, NSAttributedString.Key.font : subFont]
+    
+    let subAttributedText = NSMutableAttributedString(string: subString, attributes: subAttributes)
+    
+    mainAttributedText.append(subAttributedText)
+    
+    
+    return mainAttributedText
 }
