@@ -55,39 +55,24 @@ class EpisodesController: UIViewController {
     
     private func fetchEpisodes() {
         
-        guard let feedUrlString = podcast.feedUrl,
-              let url = URL(string: feedUrlString.contains("https") ? feedUrlString :
-                                feedUrlString.replacingOccurrences(of: "http", with: "https"))
-        else {return}
+        guard let feedUrlString = podcast.feedUrl, let url = URL(string: feedUrlString.toSecureHTTPS()) else {return}
         
         let parser = FeedParser(URL: url)
-        var episodes = [Episode]()
-
         parser.parseAsync {[weak self] result in
             switch result {
-                
             case .success(let success):
-                success.rssFeed?.items?.forEach({ feedItem in
-                    var episode = Episode(feedItem: feedItem)
-                    
-                    // if the episode has no imageUrl, use the podcastImageUrl
-                    if episode.imageUrl == nil {
-                        let podcastImageUrl = success.rssFeed?.iTunes?.iTunesImage?.attributes?.href
-                        episode.imageUrl = podcastImageUrl
-                    }
-                    episodes.append(episode)
-                })
-
+                
+                self?.episodes = success.rssFeed?.toEpisodes() ?? []
                 DispatchQueue.main.async {
-                    self?.episodes = episodes
                     self?.tableView.reloadData()
-                    print("episodes \(episodes.count)")
                 }
+                
             case .failure(let failure):
                 print("failed to parse XML \(failure.localizedDescription)")
             }
         }
     }
+    
 }
 
 extension EpisodesController: UITableViewDelegate, UITableViewDataSource {

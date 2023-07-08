@@ -61,7 +61,7 @@ class PodcastCell: UITableViewCell {
     
     private func setUpImage(for imageUrlString: String?) {
         let placeholderImage = UIImage(named: "podcastplaceholder")
-        if let urlString = imageUrlString, let url = URL(string: urlString) {
+        if let urlString = imageUrlString, let url = URL(string: urlString.toSecureHTTPS()) {
             coverImageView.sd_setImage(with: url, placeholderImage: placeholderImage)
         } else {
             coverImageView.image = placeholderImage
