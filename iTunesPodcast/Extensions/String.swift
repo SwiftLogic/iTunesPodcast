@@ -12,4 +12,11 @@ extension String {
         return self.contains("https") ? self :
         self.replacingOccurrences(of: "http", with: "https")
     }
+    
+    var URLEncoded:String {
+        let unreservedChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~"
+        let unreservedCharsSet: CharacterSet = CharacterSet(charactersIn: unreservedChars)
+        let encodedString = self.addingPercentEncoding(withAllowedCharacters: unreservedCharsSet)!
+        return encodedString
+    }
 }

@@ -6,8 +6,15 @@
 //
 
 import Foundation
+import FeedKit
 
-class APIService {
+enum SearchNetworkingError: Error {
+    case invalidURL
+    case invalidResponse
+    case invalidSearchData
+}
+
+struct APIService {
     
     static let shared = APIService()
     private let decoder = JSONDecoder()
@@ -34,20 +41,5 @@ class APIService {
             print("decoderError: \(error.localizedDescription)")
             return []
         }
-    }
-}
-
-enum SearchNetworkingError: Error {
-    case invalidURL
-    case invalidResponse
-    case invalidSearchData
-}
-
-extension String {
-    var URLEncoded:String {
-        let unreservedChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~"
-        let unreservedCharsSet: CharacterSet = CharacterSet(charactersIn: unreservedChars)
-        let encodedString = self.addingPercentEncoding(withAllowedCharacters: unreservedCharsSet)!
-        return encodedString
     }
 }

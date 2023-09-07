@@ -54,7 +54,6 @@ class EpisodesController: UIViewController {
     
     
     private func fetchEpisodes() {
-        
         guard let feedUrlString = podcast.feedUrl, let url = URL(string: feedUrlString.toSecureHTTPS()) else {return}
         
         let parser = FeedParser(URL: url)
